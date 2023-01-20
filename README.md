@@ -26,5 +26,9 @@ OPENAI_APIKEY=<your api key>
 ```
 
 ## Links and references
+
+Nice demo of a front end proxy
+https://www.youtube.com/watch?v=bB7xkRsEq-g
+
 ### Seed project
 https://www.codingthesmartway.com/how-to-use-chatgpt-with-react/

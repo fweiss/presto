@@ -12,7 +12,7 @@ formElem.addEventListener('submit', (e) => {
     axios
       .post("http://localhost:8080/chat", { prompt })
       .then((res) => {
-        responseElem.innerHTML = res.data
+        responseElem.innerText = res.data
       })
       .catch((err) => {
         console.error(err);

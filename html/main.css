@@ -1,0 +1,8 @@
+textarea#input {
+    width: 20em;
+    height: 20em;
+}
+p#response {
+    border: 1px solid black;
+    min-height: 2em;
+}
