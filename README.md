@@ -28,11 +28,3 @@ OPENAI_APIKEY=<your api key>
 ## Links and references
 ### Seed project
 https://www.codingthesmartway.com/how-to-use-chatgpt-with-react/
-
-two bugs:
-- import { useState } from 'react'
-- axios.get('http://localhost:8080/chat')
-
-need two shells
-- node server.js
-- npm run start
