@@ -6,3 +6,8 @@ p#response {
     border: 1px solid black;
     min-height: 2em;
 }
+iframe#preview {
+	aspect-ratio: 16 / 9;
+	height: 100%;
+	width: 100%;
+}

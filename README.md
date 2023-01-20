@@ -27,6 +27,8 @@ OPENAI_APIKEY=<your api key>
 
 ## Links and references
 
+https://beta.openai.com/docs/api-reference/
+
 Nice demo of a front end proxy
 https://www.youtube.com/watch?v=bB7xkRsEq-g
 
