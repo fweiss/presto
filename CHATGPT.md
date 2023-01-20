@@ -13,3 +13,9 @@ The generated code would then be passed to a web page that is set up to display 
 Once the VR scene is displayed, the user can interact with it using a VR headset or their mouse and keyboard.
 
 It's important to note that this is a complex task, and would require a significant amount of development and integration work. You would need a team of experts in web development, machine learning, and A-Frame JS to successfully implement this. It would be an ambitious project to undertake, but it could be an innovative solution for creating VR experiences.
+
+## A dialogue for VR
+- create a web page using aframe js that has a red cube
+- add a ground plane
+- add a skybox
+- add a skybox image (directs to textures.com)
