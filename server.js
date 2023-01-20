@@ -9,7 +9,7 @@ import bodyParser from 'body-parser'
 import { Configuration, OpenAIApi } from 'openai'
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_APIKEY,
+    apiKey: process.env.OPENAI_APIKEY,
 });
 
 const openai = new OpenAIApi(configuration);
@@ -21,23 +21,23 @@ app.use(express.static('html'))
 
 app.post("/chat", async (req, res, next) => {
     try {
-      if (!process.env.OPENAI_APIKEY) {
-          throw new Error('Missing OPENAI_APIKEY in .env')
-      }
-      const { prompt } = req.body
-      const completion = await openai.createCompletion({
-          model: "text-davinci-002",
-          prompt: prompt,
-          max_tokens: 120,
-      });
-      res.send(completion.data.choices[0].text)
+        if (!process.env.OPENAI_APIKEY) {
+            throw new Error('Missing OPENAI_APIKEY in .env')
+        }
+        const { prompt } = req.body
+        const completion = await openai.createCompletion({
+            model: "text-davinci-002",
+            prompt: prompt,
+            max_tokens: 120,
+        });
+        res.send(completion.data.choices[0].text)
     }
-    catch(err) {
-      next(err)
+    catch (err) {
+        next(err)
     }
 });
 
 const port = 8080;
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+    console.log(`Server listening on port ${port}`);
 });
