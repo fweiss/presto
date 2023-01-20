@@ -17,6 +17,7 @@ const openai = new OpenAIApi(configuration);
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
+app.use(express.static('html'))
 
 app.post("/chat", async (req, res, next) => {
     try {
