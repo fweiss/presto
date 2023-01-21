@@ -19,3 +19,13 @@ It's important to note that this is a complex task, and would require a signific
 - add a ground plane
 - add a skybox
 - add a skybox image (directs to textures.com)
+
+## Modification of aframe markup
+```
+change the color of the box to green
+    <a-scene>
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#F00"></a-box>
+        <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#CCC"></a-plane>
+        <a-sky src="/vr/TexturesCom_FaroerBayC_header.jpg" rotation="0 -130 0"></a-sky>
+    </a-scene>
+```
