@@ -32,6 +32,7 @@ the color of the a-box changed from red to green.
 > One time the box was given color blue.
 > Another time a non-markup result was returned.
 > But, under the right conditions, it did give the intended result.
+> Oftentimes, repeating the submit provided a satisfactory result.
 ```
 change the color of the box to green
     <a-scene>
