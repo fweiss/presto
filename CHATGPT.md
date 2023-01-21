@@ -27,6 +27,11 @@ Note that the first line specified the desired change
 and was followed by the AFrame markup code to apply the
 change to. The completion was the same markup with only
 the color of the a-box changed from red to green.
+> Well, after some testing and repeating the submit. it turned out 
+> to provide inconsistent and erroneous results.
+> One time the box was given color blue.
+> Another time a non-markup result was returned.
+> But, under the right conditions, it did give the intended result.
 ```
 change the color of the box to green
     <a-scene>
