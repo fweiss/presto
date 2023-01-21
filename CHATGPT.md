@@ -21,6 +21,12 @@ It's important to note that this is a complex task, and would require a signific
 - add a skybox image (directs to textures.com)
 
 ## Modification of aframe markup
+This chat resulted in changing the scene markup code
+in accordance with the given specification.
+Note that the first line specified the desired change
+and was followed by the AFrame markup code to apply the
+change to. The completion was the same markup with only
+the color of the a-box changed from red to green.
 ```
 change the color of the box to green
     <a-scene>
