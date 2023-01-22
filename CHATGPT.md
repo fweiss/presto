@@ -41,3 +41,13 @@ change the color of the box to green
         <a-sky src="/vr/TexturesCom_FaroerBayC_header.jpg" rotation="0 -130 0"></a-sky>
     </a-scene>
 ```
+
+## Larger example
+Try to duplicate the example from Mike's book.
+```
+Create a aframe vr web page that has
+  circle,
+  cone, dodecahedron, icosahedron, octahedron, tetrahedron, torus, torusKnot,
+  box, sphere, cylinder
+  arranged in a circle
+```

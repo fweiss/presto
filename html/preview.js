@@ -3,9 +3,13 @@ export default class Preview {
         this.previewString = ''
         this.previewElem = previewElem
         this.onUpdate = () => {}
+        this.allowInvalidReplacement = true
     }
     get previewBodyElem() {
         return this.previewElem.contentDocument.body
+    }
+    isTextValidAFrameMarkup(text) {
+        return text.trim().startsWith('<a-scene')
     }
     getPreviewString() {
         this.previewString = this.previewBodyElem.innerHTML
@@ -17,7 +21,7 @@ export default class Preview {
         // <a-entity camera="" position="" wasd-controls="" rotation="" look-controls="" aframe-injected=""></a-entity>        
     }
     replaceWithPreviewString(preview) {
-        if (preview.trim().startsWith('<a-scene')) {
+        if (this.allowInvalidReplacement || this.isTextValidAFrameMarkup(preview)) {
             this.previewBodyElem.innerHTML = preview
         }
     }

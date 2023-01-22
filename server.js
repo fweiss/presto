@@ -29,9 +29,10 @@ app.post("/chat", async (req, res, next) => {
             model: "text-davinci-002",
             prompt: prompt,
             max_tokens: 1200,
+            top_p: 0.1,
         });
-        console.log(`number of choices: ${completion.data.choices.length}`)
-        console.log(completion.data.choices[0].text)
+        // console.log(`number of choices: ${completion.data.choices.length}`)
+        // console.log(completion.data.choices[0].text)
         res.send(completion.data.choices[0].text)
     }
     catch (err) {
