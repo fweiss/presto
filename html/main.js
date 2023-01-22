@@ -1,42 +1,26 @@
-// import { default as axios } from '/axios.js'
 import axios from '/axios.js'
+import Preview from '/preview.js'
 
 const formElem = document.getElementById('request')
 const promptElem = document.getElementById('prompt')
 const responseElem = document.getElementById('response')
 const previewElem = document.getElementById('preview')
 
-class Preview {
-    constructor() {
-        this.previewString = ''
-    }
-    init() {
-        this.previewBodyElem = previewElem.contentDocument.body
-    }
-    getPreviewString() {
-        this.previewString = this.previewBodyElem.innerHTML
-        // but comes with extra
-        // <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="600" height="300"></canvas>
-        // <div class="a-loader-title" style="display: none;">Presto VR View</div>
-        // <a-entity camera="" position="" wasd-controls="" rotation="" look-controls="" aframe-injected=""></a-entity>
-        
-    }
-    replaceWithPreviewString(preview) {
-        if (preview.trim().startsWith('<a-scene')) {
-            this.previewBodyElem.innerHTML = preview
-        }
-    }
+const preview = new Preview(previewElem)
+preview.onUpdate = (previewString) => {
+    promptElem.value = previewString
 }
 
-const preview = new Preview()
-
-previewElem.contentWindow.addEventListener('load', (e) => {
-    console.log('loaded')
-    preview.init()
+// get the  preview string if iframe document is ready
+// otherwise, use an event listener
+if (previewElem.contentDocument.readyState == 'complete') {
     preview.getPreviewString();
-    console.log(preview.previewString)
-    promptElem.value = preview.previewString
-})
+} else {
+    previewElem.contentWindow.addEventListener('load', (e) => {
+        preview.getPreviewString();
+    })    
+}
+
 
 formElem.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -49,7 +33,6 @@ formElem.addEventListener('submit', (e) => {
 
         // const iframeDocument = previewElem.contentDocument
         // iframeDocument.body.innerHTML = res.data
-        preview.init()
         preview.replaceWithPreviewString(res.data)
       })
       .catch((err) => {
