@@ -12,7 +12,8 @@ const configuration = new Configuration({
     apiKey: process.env.OPENAI_APIKEY,
 });
 
-const openai = new OpenAIApi(configuration);
+// might reassign to start new session
+let openai = new OpenAIApi(configuration);
 
 const app = express()
 app.use(bodyParser.json())
@@ -24,9 +25,12 @@ app.post("/chat", async (req, res, next) => {
         if (!process.env.OPENAI_APIKEY) {
             throw new Error('Missing OPENAI_APIKEY in .env')
         }
-        // const { prompt } = req.body
         const params = req.body
-        // console.log(req.body)
+        if (!params.reuseSession) {
+            console.log('starting new openai session')
+            openai = new OpenAIApi(configuration)
+        }
+        console.log(`temperature: ${params.temperature}`)
         const completion = await openai.createCompletion({
             model: "text-davinci-002",
             prompt: params.prompt,
@@ -34,8 +38,6 @@ app.post("/chat", async (req, res, next) => {
             // top_p: 0.1,
             temperature: params.temperature
         });
-        // console.log(`number of choices: ${completion.data.choices.length}`)
-        // console.log(completion.data.choices[0].text)
         res.send(completion.data.choices[0].text)
     }
     catch (err) {
