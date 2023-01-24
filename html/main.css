@@ -44,4 +44,7 @@ iframe#preview {
         transform: rotateY(3600deg);
     }
 }
+form .field {
+    display: inline-block;
+}
   

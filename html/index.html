@@ -23,6 +23,14 @@
         <form id="request" }>
             <textarea id="prompt"></textarea>
             <button type="submit">Submit</button>
+            <div class="field">
+                <label for="temperature">Temperature:</label>
+                <input type="text" id="temperature (0.0-1.0)"/>
+            </div>
+            <div class="field">
+                <label for="temperature">Reuse session:</label>
+                <input type="checkbox" id="reuse-session"/>
+            </div>
         </form>
         <div id="response" class="none"><div></div></div>
     </div>

@@ -25,9 +25,11 @@ if (previewElem.contentDocument.readyState == 'complete') {
 formElem.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    const prompt = promptElem.value
+    const params = formJson(e)
+
+    // const prompt = promptElem.value
     axios
-      .post("http://localhost:8080/chat", { prompt })
+      .post("http://localhost:8080/chat", params)
       .then((res) => {
         responseElem.innerText = res.data.trim()
 
@@ -63,5 +65,16 @@ axios.interceptors.response.use(function (response) {
     // Do something with response error
     return Promise.reject(error);
 })
+
+function formJson(submitEvent) {
+    // fixme fragile if dom is rearranged
+    const [ promptElem, submitElem, temperatureElem, reuseSessionElem ] = submitEvent.currentTarget
+    const temperature = parseFloat(temperatureElem.value) || 0
+    return {
+        prompt: promptElem.value,
+        temperature: temperature,
+        reuseSession: reuseSessionElem.checked,
+    }
+}
 
 

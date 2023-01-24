@@ -24,12 +24,15 @@ app.post("/chat", async (req, res, next) => {
         if (!process.env.OPENAI_APIKEY) {
             throw new Error('Missing OPENAI_APIKEY in .env')
         }
-        const { prompt } = req.body
+        // const { prompt } = req.body
+        const params = req.body
+        // console.log(req.body)
         const completion = await openai.createCompletion({
             model: "text-davinci-002",
-            prompt: prompt,
+            prompt: params.prompt,
             max_tokens: 1200,
-            top_p: 0.1,
+            // top_p: 0.1,
+            temperature: params.temperature
         });
         // console.log(`number of choices: ${completion.data.choices.length}`)
         // console.log(completion.data.choices[0].text)
