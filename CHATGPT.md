@@ -51,3 +51,13 @@ Create a aframe vr web page that has
   box, sphere, cylinder
   arranged in a circle
 ```
+> This sometimes generates a reasonable result.
+
+## Some more examples
+```
+create a web page using aframe js that has an infinity pool, a floating rubber duckie and a pink flamingo.
+```
+> This does generate a result with the three entities, 
+> but it uses primitive geometric shapes instead of the rubber duck and flamingo.
+> Kind of sad really, because more relaistic entities
+> would make the experience immersive.

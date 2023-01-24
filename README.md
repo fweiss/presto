@@ -32,5 +32,7 @@ https://beta.openai.com/docs/api-reference/
 Nice demo of a front end proxy
 https://www.youtube.com/watch?v=bB7xkRsEq-g
 
+[Let's build GPT from scratch](https://www.youtube.com/watch?v=kCc8FmEb1nY)
+
 ### Seed project
 https://www.codingthesmartway.com/how-to-use-chatgpt-with-react/

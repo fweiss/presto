@@ -1,0 +1,152 @@
+Mike's experiments from 1/23/2023
+---
+change the box to the color orange:
+    <a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#F00" material="" geometry=""></a-box>
+        <a-plane position="0 0 0" rotation="-90 0 0" width="8" height="8" color="#86592d" material="" geometry=""></a-plane>
+        <a-sky src="/vr/TexturesCom_FaroerBayC_header.jpg" rotation="0 -130 0" material="" geometry="" scale=""></a-sky>
+    <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" data-engine="three.js r147" width="300" height="150"></canvas><div class="a-loader-title" style="display: none;">Presto VR View</div><a-entity camera="" position="" wasd-controls="" rotation="" look-controls="" aframe-injected=""></a-entity></a-scene>
+
+---
+
+my notes: can change any color of the box, "a-box" by the above sentence.  Now will try with multiple objects.  Will also try to change other attributes of objects and verify consistant results, or not.
+
+---
+
+change the box to the color pink:
+    <a-scene>
+
+      <!-- 3D primitive objects inside our scene, positioned x, y, z and rotation, and color -->
+      <!-- from our default created camera at view point 0, 1.6, 0 -which is 1.6 meters about the ground -->
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+
+      <!-- The plane upon which the objects are virtually positioned -->
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      
+      <!-- We are inside a gigantic hollow sphere, looking at its inner surface painted a light color of gray  -->
+      <a-sky color="#ECECEC"></a-sky>>
+
+---
+
+change the sphere to the color black:
+
+---
+
+my notes: changing colors of each different objects box and sphere works consistantly, however if an error in the results occurs, it seems to cause consitant errors going forward even when it worked previously!
+
+---
+
+    <a-scene>
+      <!-- 3D primitive objects inside our scene -->
+
+      <!-- Scale was set to half, .5 for each entity and opacity was also set to half, giving each object a transparent see through look -->
+      <a-entity id="cone" geometry="primitive: cone"  position="3.500 0 0"  rotation="0 45 0" scale=".5 .5 .5" material="color: #1DA7C3; opacity: .5"></a-entity>
+      <a-entity id="dodecahedron" geometry="primitive: dodecahedron; radius: 0.75"  position="2.182 0 2.736" rotation="0 45 0" scale=".5 .5 .5" material="color: #7D347C; opacity: .5"></a-entity>
+      <a-entity id="icosahedron" geometry="primitive: icosahedron; radius: 0.75"  position="-0.779 0 3.412" rotation="0 45 0" scale=".5 .5 .5" material="color: #A7346D; opacity: .5"></a-entity>
+      <a-entity id="octahedron" geometry="primitive: octahedron; radius: 0.75"  position="-3.153 0 1.519" rotation="0 45 0" scale=".5 .5 .5" material="color: #D19418; opacity: .5"></a-entity>
+      <a-entity id="tetrahedron" geometry="primitive: tetrahedron; radius: 0.75"  position="-3.153 0 -1.519" rotation="0 45 0" scale=".5 .5 .5" material="color: #A4B615; opacity: .5"></a-entity>
+      <a-entity id="torus" geometry="primitive: torus; radius: 0.75"  position="-0.779 0 -3.412" rotation="0 45 0" scale=".5 .5 .5" material="color: #82B32E; opacity: .5"></a-entity>
+      <a-entity id="torusKnot" geometry="primitive: torusKnot; radius: 0.75"  position="2.182 0 -2.736" rotation="0 45 0" scale=".5 .5 .5" material="color: #E38097; opacity: .5"></a-entity>
+      
+      <a-entity id="cube" geometry="primitive: box" position="-1 0.5 -3" rotation="0 45 0" material="color: #FC814A" ></a-entity>
+      <a-entity id="sphere" geometry="primitive: sphere" position="0 1.25 -5" radius="1.25" material="color: #EE4266" ></a-entity>
+      <a-entity id="cylinder" geometry="primitive: cylinder; height: 1.5; radius: 0.5" position="1 0.75 -3" material="color: #2A1E5C" ></a-entity>
+
+      <!-- The plane upon which the objects are virtually positioned -->
+      <a-plane id="plane" position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#337357"></a-plane>
+
+      <!-- Other planar (flat) 2D objects -->
+      <a-entity id="triangle" geometry="primitive: triangle" position="-1.8 4.01656 -4.6" rotation="0 45 0" material="color: #F3FFB6; opacity: .5"></a-entity>
+      <a-entity id="ring" geometry="primitive: ring" position="-1.8 2.2 -4.6" rotation="0 45 0" material="color: #F3FFB6; opacity: .5"></a-entity>
+      <a-entity id="circle" geometry="primitive: circle; radius: 0.75" position="-2 2.2 -5.08638" rotation="-43 45 -20" material="color: #CD9044; opacity: .5"></a-entity>
+
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+
+
+---
+
+notes: doesn't render scene  will try with modified code and attributes, more simplified.
+
+
+---
+
+
+change the box to the color pink:
+    <a-scene>
+
+      <!-- 3D primitive objects inside our scene, positioned x, y, z and rotation, and color -->
+      <!-- from our default created camera at view point 0, 1.6, 0 -which is 1.6 meters about the ground -->
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+
+      <!-- The plane upon which the objects are virtually positioned -->
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+
+
+     <!-- Scale was set to half, .5 for each entity and opacity was also set to half, giving each object a transparent see through look -->
+     <a-entity id="cone" geometry="primitive: cone" position="3.500 1.6 -5" rotation="0 45 0" scale=".5 .5 .5" material="color: #1DA7C3"></a-entity>
+     <a-entity id="dodecahedron" geometry="primitive: dodecahedron; radius: 0.75" position="2.182 1.6 -2.264" rotation="0 45 0" scale=".5 .5 .5" material="color: #7D347C"></a-entity>
+     <a-entity id="icosahedron" geometry="primitive: icosahedron; radius: 0.75" position="-0.779 1.6 -1.588" rotation="0 45 0" scale=".5 .5 .5" material="color: #A7346D"></a-entity>
+     <a-entity id="octahedron" geometry="primitive: octahedron; radius: 0.75" position="-3.153 1.6 -3.481" rotation="0 45 0" scale=".5 .5 .5" material="color: #D19418"></a-entity>
+     <a-entity id="tetrahedron" geometry="primitive: tetrahedron; radius: 0.75" position="-3.153 1.6 -6.519" rotation="0 45 0" scale=".5 .5 .5" material="color: #A4B615"></a-entity>
+     <a-entity id="torus" geometry="primitive: torus; radius: 0.75" position="-0.779 1.6 -8.412" rotation="0 45 0" scale=".5 .5 .5" material="color: #82B32E"></a-entity>
+     <a-entity id="torusKnot" geometry="primitive: torusKnot; radius: 0.75" position="2.182 1.6 -7.736" rotation="0 45 0" scale=".5 .5 .5" material="color: #E38097"></a-entity>
+
+     <!-- Other planar (flat) 2D objects -->
+     <a-entity id="triangle" geometry="primitive: triangle" position="-1.8 4.01656 -4.6" rotation="0 45 0" material="color: #F3FFB6"></a-entity>
+     <a-entity id="ring" geometry="primitive: ring" position="-1.8 2.2 -4.6" rotation="0 45 0" material="color: #F3FFB6"></a-entity>
+     <a-entity id="circle" geometry="primitive: circle; radius: 0.75" position="-2 2.2 -5.08638" rotation="-43 45 -20" material="color: #CD9044"></a-entity>
+      
+      <a-sky color="#ECECEC"></a-sky>
+
+    </a-scene>
+
+
+---
+
+notes: rendered scene with version A-frame 1.4.1 inside the i-frame.  but didn't change the box to pink color.  Will try again.
+
+---
+
+
+change the box to the color pink:
+    <a-scene>
+
+      <!-- 3D primitive objects inside our scene, positioned x, y, z and rotation, and color -->
+      <!-- from our default created camera at view point 0, 1.6, 0 -which is 1.6 meters about the ground -->
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+
+      <!-- The plane upon which the objects are virtually positioned -->
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+
+
+     <!-- Scale was set to half, .5 for each entity -->
+     <a-entity id="cone" geometry="primitive: cone" position="3.500 1.6 -5" rotation="0 45 0" scale=".5 .5 .5" material="color: #1DA7C3"></a-entity>
+     <a-entity id="dodecahedron" geometry="primitive: dodecahedron; radius: 0.75" position="2.182 1.6 -2.264" rotation="0 45 0" scale=".5 .5 .5" material="color: #7D347C"></a-entity>
+     <a-entity id="icosahedron" geometry="primitive: icosahedron; radius: 0.75" position="-0.779 1.6 -1.588" rotation="0 45 0" scale=".5 .5 .5" material="color: #A7346D"></a-entity>
+     <a-entity id="octahedron" geometry="primitive: octahedron; radius: 0.75" position="-3.153 1.6 -3.481" rotation="0 45 0" scale=".5 .5 .5" material="color: #D19418"></a-entity>
+     <a-entity id="tetrahedron" geometry="primitive: tetrahedron; radius: 0.75" position="-3.153 1.6 -6.519" rotation="0 45 0" scale=".5 .5 .5" material="color: #A4B615"></a-entity>
+     <a-entity id="torus" geometry="primitive: torus; radius: 0.75" position="-0.779 1.6 -8.412" rotation="0 45 0" scale=".5 .5 .5" material="color: #82B32E"></a-entity>
+     <a-entity id="torusKnot" geometry="primitive: torusKnot; radius: 0.75" position="2.182 1.6 -7.736" rotation="0 45 0" scale=".5 .5 .5" material="color: #E38097"></a-entity>
+
+     <!-- Other planar (flat) 2D objects -->
+     <a-entity id="triangle" geometry="primitive: triangle" position="-1.8 4.01656 -4.6" rotation="0 45 0" material="color: #F3FFB6"></a-entity>
+     <a-entity id="ring" geometry="primitive: ring" position="-1.8 2.2 -4.6" rotation="0 45 0" material="color: #F3FFB6"></a-entity>
+     <a-entity id="circle" geometry="primitive: circle; radius: 0.75" position="-2 2.2 -5.08638" rotation="-43 45 -20" material="color: #CD9044"></a-entity>
+      
+      <a-sky color="#ECECEC"></a-sky>
+
+    </a-scene>
+
+
+
+
+
+
+
