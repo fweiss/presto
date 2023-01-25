@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Multiple VR Objects</title>
+    <meta name="description" content="Basic Hello World VR Multiple Primitive Objects">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="gray-translucent" />
+
+    <!-- A-frame minimized JavaScript version component entity system -->
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <assets>
+       <img crossorigin="anonymous" id="orb" src="assets/img/skyground.jpg">
+    </assets>
+    <a-scene>
+       <a-entity geometry="primitive: box" material="color: #4CC3D9" position="-1 0.5 -3" rotation="0 45 0"></a-entity>
+       <a-entity geometry="primitive: sphere" material="color: #EF2D5E" position="0 1.25 -5" radius="1.25"></a-entity>
+       <a-entity geometry="primitive: cylinder" material="color: #FFC65D" position="1 0.75 -3" radius="0.5" height="1.5"></a-entity>
+       <a-entity geometry="primitive: cone" material="color: #1DA7C3" position="3.500 1.6 -5" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+       <a-entity geometry="primitive: dodecahedron" material="color: #7D347C" position="2.182 1.6 -2.264" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+       <a-entity geometry="primitive: icosahedron" material="color: #A7346D" position="-0.779 1.6 -1.588" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+       <a-entity geometry="primitive: octahedron" material="color: #D19418" position="-3.153 1.6 -3.481" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+       <a-entity geometry="primitive: tetrahedron" material="color: #A4B615" position="-3.153 1.6 -6.519" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+       <a-entity geometry="primitive: torus" material="color: #82B32E" position="-0.779 1.6 -8.412" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+       <a-entity geometry="primitive: torusKnot" material="color: #E38097" position="2.182 1.6 -7.736" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+       <a-entity geometry="primitive: triangle" material="color: #F3FFB6" position="-1.8 4.01656 -4.6" rotation="0 45 0"></a-entity>
+       <a-entity geometry="primitive: ring" material="color: #F3FFB6" position="-1.8 2.2 -4.6" rotation="0 45 0"></a-entity>
+       <a-entity geometry="primitive: circle" material="color: #CD9044" position="-2 2.2 -5.08638" rotation="-43 45 -20"></a-entity>
+
+       <a-plane id="plane" position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#337357"></a-plane>
+
+       <a-sky id="ourSkyGround" material="src: #orb" rotation="0 0 0" ></a-sky>
+    </a-scene>
+  </body>
+</html>

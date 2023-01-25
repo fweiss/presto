@@ -1,0 +1,59 @@
+First I removed the top_p and replaced it with tempature (see modification below):
+
+        const completion = await openai.createCompletion({
+            model: "text-davinci-002",
+            prompt: prompt,
+            max_tokens: 1200,
+            temperature: 0.8
+
+
+======================================
+Then start server.js and using these values in the submission field (below), I was able to get a more consistant result.  Repeat the same code but replace the instructions each time with the subsequent ones on line numbers 38, 42, 46, 50, 54, 58 in this text document.  Modifying the temperature up and down in value does seem effect the result.
+======================================
+
+
+
+
+repeat the following code without changes:
+<a-scene>
+<a-entity geometry="primitive: box" material="color: #4CC3D9" position="-1 0.5 -3" rotation="0 45 0"></a-entity>
+<a-entity geometry="primitive: sphere" material="color: #EF2D5E" position="0 1.25 -5" radius="1.25"></a-entity>
+<a-entity geometry="primitive: cylinder" material="color: #FFC65D" position="1 0.75 -3" radius="0.5" height="1.5"></a-entity>
+<a-entity geometry="primitive: cone" material="color: #1DA7C3" position="3.500 1.6 -5" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+<a-entity geometry="primitive: dodecahedron" material="color: #7D347C" position="2.182 1.6 -2.264" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+<a-entity geometry="primitive: icosahedron" material="color: #A7346D" position="-0.779 1.6 -1.588" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+<a-entity geometry="primitive: octahedron" material="color: #D19418" position="-3.153 1.6 -3.481" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+<a-entity geometry="primitive: tetrahedron" material="color: #A4B615" position="-3.153 1.6 -6.519" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+<a-entity geometry="primitive: torus" material="color: #82B32E" position="-0.779 1.6 -8.412" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+<a-entity geometry="primitive: torusKnot" material="color: #E38097" position="2.182 1.6 -7.736" rotation="0 45 0" scale=".5 .5 .5"></a-entity>
+<a-entity geometry="primitive: triangle" material="color: #F3FFB6" position="-1.8 4.01656 -4.6" rotation="0 45 0"></a-entity>
+<a-entity geometry="primitive: ring" material="color: #F3FFB6" position="-1.8 2.2 -4.6" rotation="0 45 0"></a-entity>
+<a-entity geometry="primitive: circle" material="color: #CD9044" position="-2 2.2 -5.08638" rotation="-43 45 -20"></a-entity>
+<a-sky color="#ECECEC"></a-sky>
+</a-scene>
+
+
+===
+
+change the box to the hex color orange and the sphere to the hex color green and the cylinder to the hex color pink:
+
+===
+
+change only the dodecahedron to the hex color black:
+
+===
+
+change the box to the hex color orange and the sphere to the hex color green and the cylinder to the hex color pink. change only the cone to the hex color black:
+
+===
+
+modify position attribute only for the box to have the value "-1 1.5 -3":
+
+===
+
+now modify the position attributes for all the entities to add 1 to the second number:
+
+===
+
+modify the position attributes for all the entities to subtract 2 to from the second number:
+
