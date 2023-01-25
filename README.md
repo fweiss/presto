@@ -34,5 +34,7 @@ https://www.youtube.com/watch?v=bB7xkRsEq-g
 
 [Let's build GPT from scratch](https://www.youtube.com/watch?v=kCc8FmEb1nY)
 
+[A-Frame Introduction](https://aframe.io/docs/1.4.0/introduction/)
+
 ### Seed project
 https://www.codingthesmartway.com/how-to-use-chatgpt-with-react/
