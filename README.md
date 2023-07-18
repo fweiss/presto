@@ -36,5 +36,6 @@ https://www.youtube.com/watch?v=bB7xkRsEq-g
 
 [A-Frame Introduction](https://aframe.io/docs/1.4.0/introduction/)
 
-### Seed project
-https://www.codingthesmartway.com/how-to-use-chatgpt-with-react/
+[Jason Turner tips on using chatGPT for coding](https://www.youtube.com/watch?v=I2c969I-KmM)
+
+[Seed project](https://www.codingthesmartway.com/how-to-use-chatgpt-with-react/)
