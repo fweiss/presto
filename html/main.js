@@ -62,7 +62,15 @@ axios.interceptors.response.use(function (response) {
     return response;
   }, function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
-    // Do something with response error
+    // Following error message is actually in the response data - to lazy to parse it out
+    const erro429 = 'You exceeded your current quota. Please check your plan and billing details'
+    if (error.response.status === 429) {
+        alert(erro429)
+    } else {
+        alert(error.message + '. ' + error.response.statusText)
+    }
+    responseElem.disabled = false
+    responseElem.classList.remove('spinner')
     return Promise.reject(error);
 })
 

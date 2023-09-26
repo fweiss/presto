@@ -6,14 +6,14 @@ import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 
-import { Configuration, OpenAIApi } from 'openai'
+import OpenAI from 'openai'
 
-const configuration = new Configuration({
+const configuration = {
     apiKey: process.env.OPENAI_APIKEY,
-});
+}
 
 // might reassign to start new session
-let openai = new OpenAIApi(configuration);
+let openai = new OpenAI(configuration);
 
 const app = express()
 app.use(bodyParser.json())
@@ -28,11 +28,11 @@ app.post("/chat", async (req, res, next) => {
         const params = req.body
         if (!params.reuseSession) {
             console.log('starting new openai session')
-            openai = new OpenAIApi(configuration)
+            openai = new OpenAI(configuration)
         }
         console.log(`temperature: ${params.temperature}`)
-        const completion = await openai.createCompletion({
-            model: "text-davinci-002",
+        const completion = await openai.chat.completions.create({
+            model: "gpt-3.5-turbo",
             prompt: params.prompt,
             max_tokens: 1200,
             // top_p: 0.1,
@@ -41,6 +41,7 @@ app.post("/chat", async (req, res, next) => {
         res.send(completion.data.choices[0].text)
     }
     catch (err) {
+        console.log(err)
         next(err)
     }
 });
