@@ -31,11 +31,12 @@ formElem.addEventListener('submit', (e) => {
     axios
       .post("http://localhost:8080/chat", params)
       .then((res) => {
-        responseElem.innerText = res.data.trim()
+        const content = res.data.content
+        responseElem.innerText = content.trim()
 
         // const iframeDocument = previewElem.contentDocument
         // iframeDocument.body.innerHTML = res.data
-        preview.replaceWithPreviewString(res.data)
+        preview.replaceWithPreviewString(content)
       })
       .catch((err) => {
         console.error(err);

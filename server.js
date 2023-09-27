@@ -32,13 +32,17 @@ app.post("/chat", async (req, res, next) => {
         }
         console.log(`temperature: ${params.temperature}`)
         const completion = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo",
-            prompt: params.prompt,
+            // model: "gpt-3.5-turbo",
+            model: 'gpt-4',
+            messages: [
+                { role: 'user', content: params.prompt },
+             ],
             max_tokens: 1200,
             // top_p: 0.1,
             temperature: params.temperature
         });
-        res.send(completion.data.choices[0].text)
+        // console.log(completion.choices[0].message)
+        res.send(completion.choices[0].message)
     }
     catch (err) {
         console.log(err)
