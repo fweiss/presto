@@ -35,6 +35,7 @@ app.post("/chat", async (req, res, next) => {
             // model: "gpt-3.5-turbo",
             model: 'gpt-4',
             messages: [
+                { role: 'system', content: 'Act as an a-frame programmer. I will give instructions to modify a scene. You will respond with the modified scene.' },
                 { role: 'user', content: params.prompt },
              ],
             max_tokens: 1200,
