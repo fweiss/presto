@@ -21,15 +21,19 @@
     <p>Note: add requested change in first line, example "change box color to yellow in this scene"</p>
     <div>
         <form id="request" }>
-            <textarea id="prompt"></textarea>
+            <textarea id="prompt" name="prompt"></textarea>
+            <div class="container">
+                <input type="checkbox" id="showcode" checked title="show code" name="showcode"/>
+                <textarea id="code" name="code">XXX</textarea>
+            </div>
             <button type="submit">Submit</button>
             <div class="field">
                 <label for="temperature">Temperature (0.0-1.0):</label>
-                <input type="text" id="temperature"/>
+                <input type="text" id="temperature" name="temperature"/>
             </div>
             <div class="field">
                 <label for="temperature">Reuse session:</label>
-                <input type="checkbox" id="reuse-session"/>
+                <input type="checkbox" id="reuse-session" name=""resue-session/>
             </div>
         </form>
         <div id="response" class="none"><div></div></div>

@@ -5,10 +5,12 @@ const formElem = document.getElementById('request')
 const promptElem = document.getElementById('prompt')
 const responseElem = document.getElementById('response')
 const previewElem = document.getElementById('preview')
+const codeElem = document.getElementById('code')
 
 const preview = new Preview(previewElem)
 preview.onUpdate = (previewString) => {
     promptElem.value = previewString
+    codeElem.value = previewString
 }
 
 // get the  preview string if iframe document is ready
@@ -32,7 +34,8 @@ formElem.addEventListener('submit', (e) => {
       .post("http://localhost:8080/chat", params)
       .then((res) => {
         const content = res.data.content
-        responseElem.innerText = content.trim()
+        // responseElem.innerText = content.trim()
+        codeElem.value = content.trim()
 
         // const iframeDocument = previewElem.contentDocument
         // iframeDocument.body.innerHTML = res.data
@@ -76,13 +79,22 @@ axios.interceptors.response.use(function (response) {
 })
 
 function formJson(submitEvent) {
+    const data = new FormData(submitEvent.currentTarget);
+
+
     // fixme fragile if dom is rearranged
     const [ promptElem, submitElem, temperatureElem, reuseSessionElem ] = submitEvent.currentTarget
-    const temperature = parseFloat(temperatureElem.value) || 0
+    const temperature = parseFloat(data.get('temperature')) || 0
+    // return {
+    //     prompt: promptElem.value,
+    //     temperature: temperature,
+    //     reuseSession: reuseSessionElem.checked,
+    // }
     return {
-        prompt: promptElem.value,
-        temperature: temperature,
-        reuseSession: reuseSessionElem.checked,
+        prompt: data.get('prompt'),
+        code: data.get('code'),
+        temperature: parseFloat(data.get('temperature')) || 0,
+        reuseSession: data.get('reuseSession'),
     }
 }
 
