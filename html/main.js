@@ -9,7 +9,7 @@ const codeElem = document.getElementById('code')
 
 const preview = new Preview(previewElem)
 preview.onUpdate = (previewString) => {
-    promptElem.value = previewString
+    // promptElem.value = previewString
     codeElem.value = previewString
 }
 
