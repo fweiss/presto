@@ -80,16 +80,6 @@ axios.interceptors.response.use(function (response) {
 
 function formJson(submitEvent) {
     const data = new FormData(submitEvent.currentTarget);
-
-
-    // fixme fragile if dom is rearranged
-    const [ promptElem, submitElem, temperatureElem, reuseSessionElem ] = submitEvent.currentTarget
-    const temperature = parseFloat(data.get('temperature')) || 0
-    // return {
-    //     prompt: promptElem.value,
-    //     temperature: temperature,
-    //     reuseSession: reuseSessionElem.checked,
-    // }
     return {
         prompt: data.get('prompt'),
         code: data.get('code'),
@@ -97,5 +87,3 @@ function formJson(submitEvent) {
         reuseSession: data.get('reuseSession'),
     }
 }
-
-
