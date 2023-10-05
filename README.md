@@ -39,3 +39,5 @@ https://www.youtube.com/watch?v=bB7xkRsEq-g
 [Jason Turner tips on using chatGPT for coding](https://www.youtube.com/watch?v=I2c969I-KmM)
 
 [Seed project](https://www.codingthesmartway.com/how-to-use-chatgpt-with-react/)
+
+[Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)
