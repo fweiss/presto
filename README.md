@@ -2,6 +2,9 @@
 This is a POC with the goal of creating and running
 VR experiences in a web browser using OpenAI chatGPT.
 
+> a phrase announcing the successful completion of a trick, 
+> or suggesting that something has been done so easily that it seems to be magic
+
 ## Building and running
 This is a nodeJS project, so the usual stuff.
 
@@ -13,9 +16,9 @@ node server.js
 ```
 
 ## OpenAI API key
-An API key is required to make OpenAI API requests but should not be shared.
-It is not checked in with the code. Instead the 'dotenv' package
-is used to store it in the .env file.
+An API key is required to make OpenAI API requests.
+The key should not be shared, nor
+checked in with the code. Instead the 'dotenv' package is used to store it in the .env file.
 
 > You can generate an OpenAI API key here: https://beta.openai.com/account/api-keys
 
