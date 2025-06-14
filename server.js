@@ -32,8 +32,9 @@ app.post("/chat", async (req, res, next) => {
         }
         console.log(`temperature: ${params.temperature}`)
         const completion = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo",
+            // model: "gpt-3.5-turbo",
             // model: 'gpt-4',
+            model: "gpt-4o",
             messages: [
                 { role: 'system', content: 'Act as an a-frame programmer. I will give instructions to modify a scene.' },
                 { role: 'system', content: 'You will respond with the entire modified scene. You will not include any explanations in your responses.' },
